@@ -13,7 +13,7 @@ matplotlib.use('Agg')
 HTML_BANNER = """
     <div style="background-color:#464e5f;padding:10px;border-radius:10px">
     <h1 style="color:white;text-align:center;">ToDo App (CRUD)</h1>
-    <p style="color:white;text-align:center;">Built with Streamlit</p>
+    <p style="color:white;text-align:center;">Creado con Streamlit</p>
     </div>
     """
 
@@ -21,11 +21,11 @@ HTML_BANNER = """
 def main():
     stc.html(HTML_BANNER)
 
-    menu = ["Create", "Read", "Update", "Delete", "About"]
+    menu = ["Crear", "Consultar", "Actualizar", "Borrar", "About"]
     choice = st.sidebar.selectbox("Menu", menu)
     create_table()
 
-    if choice == "Create":
+    if choice == "Crear":
         st.subheader("Add Item")
         col1, col2 = st.columns(2)
 
@@ -41,7 +41,7 @@ def main():
             st.success("Added ::{} ::To Task".format(task))
 
 
-    elif choice == "Read":
+    elif choice == "Consultar":
         # st.subheader("View Items")
         with st.expander("View All"):
             result = view_all_data()
@@ -59,7 +59,7 @@ def main():
             st.plotly_chart(p1, use_container_width=True)
 
 
-    elif choice == "Update":
+    elif choice == "Actualizar":
         st.subheader("Edit Items")
         with st.expander("Current Data"):
             result = view_all_data()
@@ -97,7 +97,7 @@ def main():
                 st.dataframe(clean_df)
 
 
-    elif choice == "Delete":
+    elif choice == "Borrar":
         st.subheader("Delete")
         with st.expander("View Data"):
             result = view_all_data()
